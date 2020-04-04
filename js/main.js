@@ -15,7 +15,8 @@ for (let i=0; i<aList.length; i++){
         x += itemMon[i];
         y += itemDev[i];
         console.log(itemMon[i]);
-        eMainLine.innerText = x;
+        // eMainLine.innerText = x.length>12 ? x.slice(0,12): x;、
+        eMainLine.innerText = x.slice(0,12);
     };
     aList[0].onclick = function () {
         eMainLine.innerText = null;
@@ -23,7 +24,9 @@ for (let i=0; i<aList.length; i++){
         y = '';
     };
     aList[18].onclick = function () {
-        console.log(eval(y));
-        eMainLine.innerText = eval(y);
+        console.log(typeof (eval(y)));
+        let z = eval(y).toString().slice(0,12);
+        console.log(z);
+        eMainLine.innerText = eval(z);
     };
 }
